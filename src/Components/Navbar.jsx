@@ -32,9 +32,9 @@ const Navbar = () => {
         tabIndex="-1"
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
         <li>
-          <a className="justify-between">
+          <p className="justify-between">
            <NavLink to={'/profile'}>profile</NavLink>
-          </a>
+          </p>
         </li>
         <li><a>Logout</a></li>
       </ul>
