@@ -4,6 +4,7 @@ import Home from "../Pages/Home";
 import SignIn from "../Pages/SignIn";
 import Login from "../Pages/Login";
 import Profile from "../Pages/Profile";
+import PrivateRoute from "../Private/PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -35,7 +36,9 @@ const router = createBrowserRouter([
         },
         {
             path:"/profile",            
-            element:<Profile></Profile>
+            element:<PrivateRoute>
+                <Profile></Profile>
+            </PrivateRoute>
 
         },
     ]
