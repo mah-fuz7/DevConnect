@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 
 const AuthProvider = ({children}) => {
 const [user,setUser]=useState(null)
-
+const [loading,setLoading]=useState(true)
     // GOOGLE PROVIDER
     const provider=new GoogleAuthProvider();
 
@@ -66,7 +66,8 @@ logInWithEmailPasswordFunc,
 user,
 setUser,
 updateUserProfileFunc,
-deleteUserFunc
+deleteUserFunc,
+loading
 
     }
     // user tracker
@@ -74,6 +75,7 @@ deleteUserFunc
  const unsubscribe =onAuthStateChanged(auth,(currentUser)=>{
     console.log(currentUser)
     setUser(currentUser)
+    setLoading(false)
  });
  return ()=>{
     unsubscribe()
